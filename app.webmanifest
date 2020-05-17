@@ -1,0 +1,14 @@
+{
+	"name": "Numerals - Arrows",
+	"short_name": "Numerals - Arrows",
+	"description": "Numerals - Arrows memory game",
+	"start_url": "https://fson4.github.io",
+	"display": "standalone",
+	"background_color": "#000",
+	"theme_color": "#000",
+	"icons": [
+		{ "src": "icon/icon.svg", "type": "image/svg+xml", "sizes": "any" },
+		{ "src": "icon/x192.png", "type": "image/png", "sizes": "192x192" },
+		{ "src": "icon/x512.png", "type": "image/png", "sizes": "512x512" }
+	]
+}

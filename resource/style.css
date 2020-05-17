@@ -1,0 +1,73 @@
+html, body { width: 100%; height: 100%; font: 16px/1.2 Arial, sans-serif; background: #000; color: #fff; cursor: default; --style: #030; --color: #080 }
+body { display: grid; grid-template: 30% 40% 30% / 20% 60% 20%; place-items: end center; text-align: center; overflow: hidden; user-select: none; -webkit-user-select: none }
+body, ul, ol, p { padding: 0; margin: 0 }
+
+.grid { grid-template: repeat(5, 1fr) / repeat(8, 1fr); height: 85%; --size-box: 136px; font: 500 var(--size-box)/1 "SF Pro Display", Roboto, system-ui }
+.grid.win-ui-font { font: 600 var(--size-box)/.87 "Segoe UI", system-ui }
+.box, .arrow { width: var(--size-box); height: var(--size-box) }
+.arrow { background: #fff; clip-path: polygon(41% 100%, 43% 35%, 23% 40%, 50% 0, 77% 40%, 57% 35%, 59% 100%) }
+.mask { background: linear-gradient(#fff 50%, #000 0) top left/25% 25%, linear-gradient(90deg, #fff 50%, #000 0) top left/25%; background-blend-mode: difference }
+.red { color: #f00 }
+.red .arrow { background: #f00 }
+
+.Arrows { --style: #006; --color: #57e }
+.help, .level { grid-area: 1 / 1; place-self: start; margin: 16px 0 0 16px; z-index: 10 }
+.speaker { grid-area: 1 / 2; place-self: start center; margin: 16px 0 0 }
+.toggle, .return { grid-area: 1 / 3; place-self: start end; margin: 16px 16px 0 0 }
+.menu, .result { grid-area: 2 / 2; place-self: start center }
+.dwnl, .circle { grid-area: 3 / 2; margin: 0 0 16px }
+.screen { grid-area: 3 / 3; place-self: end; margin: 0 16px 16px 0 }
+p { min-width: 2.1em; min-height: 2em; line-height: 2; font-size: 1.3em }
+p, ul { white-space: nowrap }
+p, .menu li { border-radius: .2em }
+p, .result { background: var(--style); color: var(--color); border: 1px solid #fff3 }
+p, .result li { text-shadow: .12em .1em 0 #000 }
+ol { margin: 0 1em 0 1.7em; padding: .45em; color: #fff; font-size: .9em; line-height: 1.4; text-align: left; text-shadow: none }
+ul { list-style-type: none }
+.speaker { font-size: 1.5em }
+.menu li { display: inline-block; background: #999; color: #000; border: 3px outset #bbb; width: 6.2em; height: 1.75em; line-height: 1.75em; font-size: 2.4em; margin: 0 1.5em }
+.dwnl { margin-bottom: 8px; width: 5.5em }
+.dwnl, .level, .return { font-size: 1.8em; min-height: 1.5em; line-height: 1.57 }
+.screen { position: relative; box-sizing: border-box; border: 4px solid var(--color); width: 30px; height: 30px; transform-origin: bottom right }
+.screen::after { content: ""; width: 32px; height: 32px; position: absolute; top: -5px; left: -5px; background: #000;
+	clip-path: polygon(0 31%, 31% 31%, 31% 0, 69% 0, 69% 31%, 100% 31%, 100% 69%, 69% 69%, 69% 100%, 31% 100%, 31% 69%, 0 69%) }
+.level, .return { width: 4.6em }
+.result { margin-top: -1em; font-size: 1.2em; border: .1em solid; border-radius: .8em; box-shadow: 0 0 6em #666, 0 0 2em #ccc }
+.result.success  { margin-top: -2.5em }
+.result li { margin: .6em 1em; font-size: 1.7em; font-weight: 700; color: var(--color) }
+.result li:nth-child(1) { font-size: 2em }
+.result li:nth-child(2) { margin-top: -.1em }
+.circle { --size-circle: 155px; width: var(--size-circle); height: var(--size-circle); border-radius: 50%; background: radial-gradient(#000 53%, transparent 54%), #fff }
+.minus, .plus { background: radial-gradient(#000 53%, transparent 54%), conic-gradient(from -14deg, #f00 28deg, #fff 0); transition: transform 1s ease-out .1s }
+.minus { transform: rotate(-45deg) }
+.plus { transform: rotate(45deg) }
+p:active, p:active ol { color: #444 }
+.menu li:active { background: #444; border: 3px solid #333 }
+.screen:active { border-color: #444 }
+.circle:active { background: radial-gradient(#000 53%, transparent 54%), #444 }
+.minus:active, .plus:active { background: radial-gradient(#000 53%, transparent 54%), conic-gradient(from -14deg, #222 28deg, #444 0) }
+
+@media (orientation: portrait) {
+.grid { grid-template: repeat(8, 1fr) / repeat(5, 1fr) }
+.menu li { display: block; margin-bottom: 1.8em }
+}
+@media (max-width: 1600px) {
+.grid { --size-box: 96px }
+p { font-size: 1.1em }
+.speaker { font-size: 1.3em }
+.menu li { font-size: 1.8em }
+.dwnl, .level, .return { font-size: 1.5em }
+.screen { transform: scale(.8) }
+.result { font-size: 1em }
+.circle { --size-circle: 120px }
+}
+@media (max-width: 1020px) {
+.grid { --size-box: 52px }
+.menu li { font-size: 1.4em }
+.dwnl, .level, .return { font-size: 1.3em }
+.result { font-size: .8em }
+.circle { --size-circle: 90px }
+}
+@media (min-width: 760px) and (max-width: 1020px) and (min-height: 600px) { .grid { --size-box: 80px }}
+@media (min-width: 1100px) and (max-width: 1600px) and (min-height: 800px) { .grid { --size-box: 104px }}
+@media (min-width: 1200px) and (max-width: 1600px) and (min-height: 1020px) { .grid { --size-box: 128px }}

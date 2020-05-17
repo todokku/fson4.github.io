@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="resource/style.css"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>Numerals - Arrows</title>
+<script src="resource/script.js"></script>
+<meta name="description" content="Numerals - Arrows memory game" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<link rel="apple-touch-icon" href="icon/x192.png" />
+<link rel="manifest" href="app.webmanifest" />
+<link rel="icon" type="image/svg+xml" sizes="any" href="icon/icon.svg" />
+<link rel="canonical" href="https://fson4.github.io" />
+</head>
+<body>JavaScript: false</body>
+</html>
